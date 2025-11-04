@@ -12,8 +12,7 @@ def read_images_from(path):
         if ext.lower() not in valid_images:
             continue
 
-        image = cv2.imread(os.path.join(path,f))
-        # images.append(image)
+        image = cv2.imread(os.path.join(path,f)) #images.append(image)
         wrap, target = random_warp(image)
         images.append(target)
         wrap_images.append(wrap)

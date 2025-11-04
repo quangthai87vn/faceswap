@@ -10,8 +10,8 @@ ap.add_argument("-m", "--model", type=str, default="",
     help="model name", required=True)
 args = vars(ap.parse_args())
 
-autoencoder = load_model("model/{0}_model.h5".format(args["model"]))
-autoencoder.load_weights("model/{0}_weight.h5".format(args["model"]))
+autoencoder = load_model("model/{0}.best.weights.keras".format(args["model"]))
+autoencoder.load_weights("model/{0}.weights.h5".format(args["model"]))
 
 wrap ,a_faces = read_images_from("images/tests")
 
